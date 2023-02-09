@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/nest-service/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/nest-service/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/nest-service",
+  "projects": {
+    "nest-service": {
+      "type": "application",
+      "root": "apps/nest-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/nest-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/nest-service/tsconfig.app.json"
+      }
+    },
+    "calculator": {
+      "type": "application",
+      "root": "apps/calculator",
+      "entryFile": "main",
+      "sourceRoot": "apps/calculator/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/calculator/tsconfig.app.json"
+      }
+    },
+    "my-library": {
+      "type": "library",
+      "root": "libs/my-library",
+      "entryFile": "index",
+      "sourceRoot": "libs/my-library/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/my-library/tsconfig.lib.json"
+      }
+    }
+  }
+}
